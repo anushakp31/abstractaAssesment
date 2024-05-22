@@ -16,9 +16,7 @@ class CartPage {
 
 }
 
-  async navigateToCart() {
-    await this.page.goto('https://magento.softwaretestingboard.com/checkout/cart/');
-  }
+  
 
   async verifyCartPage(){
     

@@ -19,9 +19,7 @@ class CheckoutPage {
     this.miniCartPriceLocator = '.price-excluding-tax .price';
 }
 
-  async navigateToCheckout() {
-    await this.page.goto('https://magento.softwaretestingboard.com/checkout/#shipping');
-  }
+
   async verifyCheckoutPage(){
     await this.page.waitForSelector(this.shippingAddressTitle, { state: 'visible' });
     console.log('Shipping Address is visible.');

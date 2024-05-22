@@ -1,6 +1,6 @@
 // pages/home.page.js
 const { expect } = require('@playwright/test');
-// require('dotenv').config();
+require('dotenv').config();
 
 class HomePage {
     constructor(page) {
@@ -11,12 +11,7 @@ class HomePage {
     }
   
     async goTo() {
-      console.log('env varsss');
-
-      console.log(process.env.EMAIL);
-      console.log(process.env.TESTURL);
-      console.log("****");
-      console.log(process.env);
+      
       await this.page.goto(process.env.TESTURL);
     }
   

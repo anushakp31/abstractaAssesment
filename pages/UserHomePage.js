@@ -11,7 +11,8 @@ class UserHomePage {
       this.loggedIn=page.locator('span.logged-in');
      
     this.profileDropdown = this.page.locator('button.action.switch:has-text("Change")').first();
-
+      this.womenLink='#ui-id-4'
+      this.womenTopsLink='#ui-id-9'
     this.dropDownBox = page.locator('.header.links');
       this.signOutLink = this.dropDownBox.locator('a:has-text("Sign Out")');
       this.infoBox='.box.box-information';
@@ -33,7 +34,11 @@ class UserHomePage {
 
         
     }
+async clickCategoryAndSubCategory(){
+  await this.page.locator(this.womenLink).hover();
+  await this.page.locator(this.womenTopsLink).click();
 
+}
 async logOut(){
     try {
         // Locate the span element wrapping the button

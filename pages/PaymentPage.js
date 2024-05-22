@@ -12,9 +12,7 @@ class PaymentPage {
 
 }
 
-  async navigateToPayment() {
-    await this.page.goto('https://magento.softwaretestingboard.com/checkout/#payment');
-  }
+ 
   async verifyPaymentPage(){
     await this.page.waitForSelector(this.paymentTitle, { state: 'visible' });
     console.log('Payment Method is visible.');

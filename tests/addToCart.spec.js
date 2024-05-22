@@ -10,7 +10,8 @@ const { ProductPage } = require('../pages/ProductPage.js');
 const{ CartPage}=require('../pages/CartPage.js');
 const { CheckoutPage}= require('../pages/CheckoutPage.js')
 const {PaymentPage} =require('../pages/PaymentPage.js')
-const {SuccessPage} =require('../pages/SuccessPage.js')
+const {SuccessPage} =require('../pages/SuccessPage.js');
+const { UserHomePage } = require('../pages/UserHomePage.js');
 test('Add random products to cart and verify', async ({ page }) => {
   const homePage = new HomePage(page);
   const loginPage = new LoginPage(page);
@@ -19,6 +20,7 @@ test('Add random products to cart and verify', async ({ page }) => {
   const checkoutPage = new CheckoutPage(page);
   const paymentPage=new PaymentPage(page);
   const successPage=new SuccessPage(page);
+  const userHomePage=new UserHomePage(page); 
 
   // Navigate to the home page and login
   await homePage.goTo();
@@ -28,8 +30,7 @@ test('Add random products to cart and verify', async ({ page }) => {
   await loginPage.verifyLoginSuccessful();
 
   // Navigate to a product category page
-  await page.goto('https://magento.softwaretestingboard.com/women/tops-women.html');
-
+  await userHomePage.clickCategoryAndSubCategory();
   // Select random products
   const randomProducts = await productPage.selectRandomProducts(2);
 
