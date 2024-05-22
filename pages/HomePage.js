@@ -1,6 +1,6 @@
 // pages/home.page.js
 const { expect } = require('@playwright/test');
-require('dotenv').config();
+// require('dotenv').config();
 
 class HomePage {
     constructor(page) {
