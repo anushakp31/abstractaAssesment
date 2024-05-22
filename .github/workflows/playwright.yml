@@ -9,6 +9,10 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      TESTURL: ${{ secrets.TESTURL }}
     steps:
       - name: Print environment variables
         run: |
@@ -24,10 +28,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright test
-        env:
-          EMAIL: ${{ secrets.EMAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          TESTURL: ${{ secrets.TESTURL }}
+        
         run: npx playwright test
       
       # - name: Run Playwright tests
